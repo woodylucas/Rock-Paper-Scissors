@@ -25,11 +25,13 @@ function convertToWord(letter) {
 		return "Scissors";
 
 }
+//win function
 function win(userChoice, computerChoice) {
 	const smallUserWord = "user".fontsize(3).sub();
 	const smallCompWord = "comp".fontsize(3).sub();
 	const userChoice_div = document.getElementById(userChoice);
 	userScore++;
+	// innerHTML shows scores on page
 	userScore_span.innerHTML = userScore;
 	computerScore_span.innerHTML = computerScore;
 	result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats  ${convertToWord(computerChoice)}${smallCompWord} . You win!`;
@@ -37,7 +39,7 @@ function win(userChoice, computerChoice) {
 	setTimeout(() => document.getElementById(userChoice).classList.remove('green-glow'), 300);
 }
 
-
+//loser function
 function lose(userChoice, computerChoice) {
 	const smallUserWord = "user".fontsize(3).sub();
 	const smallCompWord = "comp".fontsize(3).sub();
@@ -45,12 +47,13 @@ function lose(userChoice, computerChoice) {
 	computerScore++;
 	userScore_span.innerHTML = userScore;
 	computerScore_span.innerHTML = computerScore;
+	//ES6
 	result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord} . You Lost!`;
 	userChoice_div.classList.add('red-glow');
 	setTimeout(() => userChoice_div.classList.remove('red-glow'), 300);
 
 }
-
+// draw function
 function draw(userChoice, computerChoice) {
 	const smallUserWord = "user".fontsize(3).sub();
 	const smallCompWord = "comp".fontsize(3).sub();
@@ -61,7 +64,8 @@ function draw(userChoice, computerChoice) {
 }
 
 console.log(getComputerChoice());
-
+// swtich statements instead of if statements
+//switch statements for winner/loser/draw outcomes for computer and user
 function game(userChoice) {
 	const computerChoice = getComputerChoice();
 	switch (userChoice + computerChoice) {
