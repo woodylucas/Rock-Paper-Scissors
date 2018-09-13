@@ -1,3 +1,6 @@
+
+//Collecting score, creating referances storing DOM variables
+//Caching The DOM storing something for future use.
 let userScore = 0;
 let computerScore =0;
 const userScore_span = document.getElementById("user-score");
@@ -8,7 +11,8 @@ const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 
-
+//Storing COMPUTERS choice, use Random to select Random Choice.
+//what happens when computer selects rock, paper, or scissors.
 function getComputerChoice() {
 	const choices = ['r', 'p', 's'];
 	const randomNumber = Math.floor(Math.random() * 3);
@@ -80,7 +84,7 @@ function game(userChoice) {
 	}
 
 }
-
+//Events for when users click
 function main() {
 	rock_div.addEventListener('click', () => game("r"));
 	paper_div.addEventListener('click', () => game("p"));
